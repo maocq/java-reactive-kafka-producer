@@ -11,6 +11,13 @@ spring:
       path: "/h2"
   profiles:
     include: null
+
+  kafka:
+    bootstrap-servers: "localhost:9092"
+    producer:
+      key-serializer: "org.apache.kafka.common.serialization.StringSerializer"
+      value-serializer: "org.springframework.kafka.support.serializer.JsonSerializer"
+
 management:
   endpoints:
     web:
